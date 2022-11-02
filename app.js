@@ -27,7 +27,7 @@ headDropdown.addEventListener("change", (e) => {
   // update the dom for the head (use style.backgroundImage on the headEl div instead of trying to set the .src -- it's NOT an img tag!)
   headEl.style.backgroundImage = `url(./assets/${value}-head.png)`;
   // update the stats to show the new count (call displayStats() to do this work)
-  // displayStats();
+  displayStats();
 });
 
 middleDropdown.addEventListener("change", (e) => {
@@ -38,7 +38,7 @@ middleDropdown.addEventListener("change", (e) => {
   // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)
   middleEl.style.backgroundImage = `url(./assets/${value}-middle.png)`;
   // update the stats to show the new count (call displayStats() to do this work)
-  // displayStats();
+  displayStats();
 });
 
 bottomDropdown.addEventListener("change", (e) => {
@@ -49,7 +49,7 @@ bottomDropdown.addEventListener("change", (e) => {
   // update the dom for the bottom (NOTE use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
   bottomEl.style.backgroundImage = `url(./assets/${value}-pants.png)`;
   // update the stats to show the new count (call displayStats() to do this work)
-  // displayStats();
+  displayStats();
 });
 
 catchphraseButton.addEventListener("click", () => {
@@ -59,12 +59,13 @@ catchphraseButton.addEventListener("click", () => {
   catchphrases.push(catchphraseValue);
   // clear out the form input's value so it's empty to the user
   catchphraseInput.value = "";
-  console.log("buttonclick");
+  console.log(catchphrases);
   // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
 });
 
 function displayStats() {
   // text content of the reportEl to tell the user how many times they've changed each piece of the state
+  reportEl.textContent = `You changed the top ${headCount} times, the middle ${middleCount} times, and the bottom ${bottomCount} times!`;
 }
 
 function displayCatchphrases() {
