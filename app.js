@@ -59,7 +59,7 @@ catchphraseButton.addEventListener('click', () => {
     catchphrases.push(catchphraseValue);
     // clear out the form input's value so it's empty to the user
     catchphraseInput.value = '';
-    console.log(catchphrases);
+    displayCatchphrases();
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
 });
 
